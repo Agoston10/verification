@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verification Callback</title>
+</head>
+<body>
+  <h1>✅ Discord Login Successful!</h1>
+  <p>You were redirected back here. Check the URL — Discord added a <code>?code=...</code> parameter.</p>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("code")) {
+      document.body.innerHTML += "<p>Your code is: " + params.get("code") + "</p>";
+    } else {
+      document.body.innerHTML += "<p>No code received.</p>";
+    }
+  </script>
+</body>
+</html>
